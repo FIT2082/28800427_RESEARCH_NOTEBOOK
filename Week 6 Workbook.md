@@ -10,7 +10,7 @@ Meeting:
 Progress:
 ---------
   - Grace has been working on Python code to convert SQLite to GenTra.
-  - I have decided to work on devising problem categories for all of the problems in the MiniZinc challenge benchmark. These will be the problems that we will be running the solver on while we record its behaviour. 
+  - I have decided to work on devising problem categories for all of the problems in the MiniZinc challenge benchmark. These will be the problems that we will be running the solver on while we record its behaviour. Those problems can be found [here](https://github.com/MiniZinc/minizinc-benchmarks "MiniZinc Benchmarks").
   - Ultimately I hope that we will be able to use this to split the problems up and more easily make inferences about how meaningful sonification is during our final report. 
 
 To Do:
