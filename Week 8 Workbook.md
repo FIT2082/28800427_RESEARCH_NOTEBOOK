@@ -3,7 +3,8 @@ Project Workbook – Week 8
 
 Meeting:
 --------
-  Grace and I met with Guido and Kevin this Tuesday to discuss our progress. We received some feedback on our project specifications, and Grace worked out some kinks in the converter.
+  - Grace and I met with Guido and Kevin this Tuesday to discuss our progress. 
+  - We received some feedback on our project specifications, and Grace worked out some kinks in the converter.
   
 Progress:
 ---------
@@ -12,5 +13,4 @@ Progress:
 
 To Do:
 ------
-- While Grace is finishing off the converter, I will devise problem categories so that we can group our output databases for analysis
-- Once done, I will begin generating the databases and will endeavour to upload them within this repo in batches, as they are ready
+- I will start generating the databases which can then be fed into Grace's converter. From what I have seen, it's possible that I might be able to do some automation here. Though I cannot yet judge how easy that will be.
