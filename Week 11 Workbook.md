@@ -24,3 +24,4 @@ To Do:
 ------
 - Focus on the poster for this week, up until next Friday when it is due
 - Continue uploading the databases as necessary
+- Upload the diagram sketch to GIT
