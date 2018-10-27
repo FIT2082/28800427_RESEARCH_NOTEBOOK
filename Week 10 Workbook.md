@@ -8,18 +8,19 @@ Meeting:
   
 Progress:
 ---------
-- Generated a python script to generate a BAT file which flattens every MZN and DZN pairing into an FZN that GECODE can use to solve that instance of the problem.
-- Generated a python script to run GECODE on every generated FZN and use the CP-Profiler to examine the search tree and generate a database to represent it
-- Started generating fzns and databases
+- Fixed up a couple of kinks in my Python script that ultimately is responsible for flattening the Model/Data pairings, then ran it on some of the files which I hadn't done (due to the kinks).
+- Generated a python script to run Gecode on every generated FZN and use the CP-Profiler to examine the search tree and generate a database to represent it
+- Started generating databases
 
 Problems:
 ---------
-- The mzn2fzn procedure does not have a timeout parameter. This means that for conversions which take a substantial amount of time, there is a huge delay in which there is very little workflow happening. I can't get around this without building complicated solutions using windows commands, which in turn create other issues. I have been manually terminating on files which take too long to flatten.
-- The 
+- Some of the Fzn files take an incredibly long time to solve and thus profile. To tackle this, I used the timeout option that Gecode provides to cut the sove short, knowing that CPP would profile the tree so far anyway and it would likely yield enough data after about 10 seconds.
+- Once the solve had finished, I made the next BAT command a TASKKILL on the Profiler. This is because after every solve, the profiler would stop working for some reason - ultimately leading to my computer maintaining hundreds of CPP processes at once, as well as outputing to the terminal constantly to tell me what it was doing (which was also a mistake, though I never got around to making the BAT run output-free).
 
 To Do:
 ------
-- Now that I know we are trying to source databases that will have a smaller amount of information, and thus take less time to analysis - I will revisit my database (problem) categories and see if they are still suitable, checking the benchmarks as I go.
-- Time permitting, I can then begin generating the databases
-- Set up a meeting with Grace to discuss the categories and make sure I can correctly generate suitable databases - as she is more experienced than I am
-- Potentially meet with Kevin outside of regular hours next week to ensure I am on the right track with the databases.
+- Review the databases I have generated so far and make sure they're looking OK.
+- Try and come up with a design for the poster's diagram centerpiece. 
+- Start writing up content for the poster
+- Fix any issues with database generation
+- Start uploading databases here for Grace to access so that she can work on converting them to MIDI Disassembly. 
