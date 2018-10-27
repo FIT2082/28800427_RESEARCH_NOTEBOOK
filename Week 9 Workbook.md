@@ -11,13 +11,18 @@ Meeting:
   
 Progress:
 ---------
-- Grace is still making some changes to the converter program
-- I have devised several lists of potential categories for databases that we could use to test.
-- I should now be set up to begin generating databases, though I have yet to do this.
+- Grace is still making some changes to the converter program.
+- I have started automating the database generation process. This has been pretty arduous.
+- I have set up the flattening (conversion) from models/data to a solvable FlatZinc file so that it is mostly automatic, and will perform this compilation using both Gecode specific functionality, and also using only the functionality available in the standard libraries.
+
+Issues:
+-------
+- The results of the MiniZinc challenge should in theory provide a way of selecting only problem instances which will run in a sufficiently small timeframe. Unfortunately, most of the problem instances have a documented solve time that is too long anyway - so in practice I can't really cut out problem instances without removing most of the total data set.
+- In order to generate databases, the first thing is to take the models from the benchmarks and then pair them with different datasets to create problem instances. This process is done with the "mzn2fzn" application, which comes packaged with the MiniZinc IDE. 
+- Unfortuantely, mzn2fzn does not have a timeout option. I have written a python script, which generates a .BAT script which will in turn perform the above conversion on all possible model-data pairings in the benchmarks. However the BAT file gets stuck on some pairings for up to 3 hours.
+- I have been forced to manually terminate the BAT and restart it from the correct point. All-up, the conversion has taken about 3 days. Thankfully, it only needs to be done once. 
 
 To Do:
 ------
-- Now that I know we are trying to source databases that will have a smaller amount of information, and thus take less time to analysis - I will revisit my database (problem) categories and see if they are still suitable, checking the benchmarks as I go.
-- Time permitting, I can then begin generating the databases
-- Set up a meeting with Grace to discuss the categories and make sure I can correctly generate suitable databases - as she is more experienced than I am
+- Automating the process of producing FlatZinc files, then running them though the solver and profiling as it happens.
 - Potentially meet with Kevin outside of regular hours next week to ensure I am on the right track with the databases.
